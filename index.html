@@ -64,7 +64,7 @@
 
 <h2>What LifeVya stores</h2>
 <p>Everything LifeVya creates — the connections between your items, the search index, face groupings, and chat history — is written to a database inside the app's own storage on your iPhone.</p>
-<p>There is no sign-in and no backend. LifeVya has no servers that hold your data. The two cases where anything leaves the phone are described below, and neither sends your data to LifeVya.</p>
+<p>There is no sign-in and no backend. LifeVya has no servers that hold your data. The network uses are described below, and none of them send your data to LifeVya.</p>
 
 <h2>What LifeVya reads, and why</h2>
 <p>LifeVya only reads a source after you grant permission for it, and you can revoke any of these at any time in iOS Settings.</p>
@@ -73,7 +73,7 @@
   <li><strong>Camera</strong> — to capture new photos directly in the app.</li>
   <li><strong>Contacts</strong> — to recognise the people in your life across photos, events, and documents.</li>
   <li><strong>Calendar</strong> — to connect your schedule to people, places, and memories.</li>
-  <li><strong>Reminders</strong> — so to-dos you create in LifeVya can also appear in Apple Reminders.</li>
+  <li><strong>Reminders</strong> — LifeVya reads the reminders on this iPhone so you can find them in search and chat.</li>
   <li><strong>Health</strong> — sleep, steps, flights climbed, heart rate, active energy, walking and running distance, weight, and height. LifeVya only reads these; it never writes anything back to Health. A health question can include the relevant readings in the on-device model's prompt. They are not uploaded.</li>
   <li><strong>Microphone and Speech Recognition</strong> — to let you talk to LifeVya and dictate notes. Speech is transcribed on your device.</li>
   <li><strong>Documents</strong> — only the files or folders you explicitly choose to link.</li>
@@ -87,11 +87,14 @@
 <p>LifeVya looks for faces in the photos you allow it to read, and stores a numeric face embedding for each one in the app's database on this iPhone. Those embeddings are used only to suggest which photos show the same person, so you can confirm or correct the name. They are not shared with LifeVya or any third party, and they are not used to identify anyone outside your own photo library. They remain until you use Delete All LifeVya Data or delete the app. Questions about face data can be sent to <a href="mailto:anil.lifevya@gmail.com">anil.lifevya@gmail.com</a>.</p>
 
 <h2>When the app does use the network</h2>
-<p>LifeVya is offline for all AI and all storage. There are exactly two exceptions, and neither sends your personal data to LifeVya:</p>
+<p>LifeVya does not upload your library or your questions for AI processing. These are the network uses, and none of them send your data to LifeVya:</p>
 <ul>
   <li><strong>Optional model download.</strong> If you choose to download the built-in language model, the model files are fetched from Apple's App Store content delivery network. No information about you is sent — this is only a download.</li>
-  <li><strong>Place names for photos.</strong> When LifeVya turns a photo's GPS coordinates into a readable place name, those coordinates are sent to Apple's geocoding service, which is the same service the system Photos app uses. Only the coordinates are sent — not the photo, and nothing else about you. This is handled by Apple under Apple's privacy policy.</li>
+  <li><strong>Place names for photos.</strong> When LifeVya turns a photo's GPS coordinates into a readable place name, those coordinates are sent to Apple's geocoding service, which is the same service the system Photos app uses. Only the coordinates are sent — not the photo, and nothing else about you.</li>
+  <li><strong>A photo that is not stored on this iPhone.</strong> Opening the full photo can download that original from iCloud Photos. List thumbnails stay on the device.</li>
+  <li><strong>Maps.</strong> Opening a map loads map tiles from Apple.</li>
 </ul>
+<p>LifeVya's files on this iPhone, including the database and exports, are excluded from iCloud and computer backup.</p>
 
 <h2>No tracking or analytics</h2>
 <p>LifeVya contains no analytics, crash-reporting, advertising, or tracking SDKs. Nothing you do in the app is measured or reported to anyone, including us.</p>
